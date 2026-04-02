@@ -1,5 +1,4 @@
 <?php
-require_once 'cors.php';
 session_start();
 
 function isLoggedIn() {
@@ -24,17 +23,19 @@ function isCustomer() {
 
 function requireAgency() {
     if (!isLoggedIn() || !isAgency()) {
-        http_response_code(403);
-        echo json_encode(["error" => "Unauthorized. Agency access required."]);
+        header('Location: login.php');
         exit;
     }
 }
 
 function requireCustomer() {
     if (!isLoggedIn() || !isCustomer()) {
-        http_response_code(403);
-        echo json_encode(["error" => "Unauthorized. Customer access required."]);
+        header('Location: login.php');
         exit;
     }
+}
+
+function getUserName() {
+    return isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
 }
 ?>

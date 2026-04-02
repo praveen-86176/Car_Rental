@@ -1,8 +1,8 @@
 <?php
-$host     = 'sql300.epizy.com';         // ← your actual host
-$dbname   = 'epiz_12345678_carrental';   // ← your actual DB name
-$username = 'Praveen';             // ← your actual username
-$password = 'pk86176rj';          // ← your DB password
+$host     = 'sql102.byetcluster.com';         
+$dbname   = 'if0_41561926_carrental';   
+$username = 'if0_41561926';             
+$password = 'pk86176rj';          
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
